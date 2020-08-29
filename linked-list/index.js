@@ -1,7 +1,10 @@
 /**
  * Initialize your data structure here.
  */
-var MyLinkedList = function () {};
+var MyLinkedList = function () {
+  this.val;
+  this.next;
+};
 
 /**
  * Get the value of the index-th node in the linked list. If the index is invalid, return -1.
