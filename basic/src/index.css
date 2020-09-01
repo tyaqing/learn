@@ -1,34 +1,22 @@
-body {
-  min-width: 630px;
-}
-.container {
-  overflow: hidden;
-  /* padding-left: 100px; */
-  /* padding-right: 200px; */
-  position: relative;
+.center {
+  height: 150px;
+  background-color: #94e8ff;
+  flex-grow: 2;
 }
 
-.center {
-  background-color: #1abc9c;
-  height: 200px;
-  float: left;
-  margin-left: 120px;
-  margin-right: 200px;
-}
 .left {
-  background-color: #c1c;
-  width: 120px;
-  height: 200px;
-  float: left;
-  margin-left: -100%;
-  /* position: absolute;
-  left: 0;
-  top: 0; */
+  width: 100px;
+  height: 150px;
+  background-color: #ffb5bf;
+  order: -1;
+  /* flex-grow: 1; */
 }
 .right {
-  float: left;
-  background-color: #8c2;
   width: 200px;
-  height: 200px;
-  margin-left: -200px;
+  height: 150px;
+  background-color: #8990d5;
+  /* flex-grow: 1; */
+}
+.container {
+  display: flex;
 }
