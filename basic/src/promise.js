@@ -1,11 +1,9 @@
-/* 跟 thenable 对象 */
-var thenable = {
-  then: function (resolve, reject) {
-    resolve({ a: 123 });
-  },
-};
-
-const result = Promise.resolve(thenable);
-// Promise {state: "resolved", data: 1, callbackQueue: Array(0)}
-
-console.log(result);
+let p = new Promise(function (resolve, reject) {
+  setTimeout(() => {
+    //使用定时器来模拟异步
+    resolve(100);
+  }, 1000);
+});
+p.then(function (data) {
+  console.log(data);
+});
