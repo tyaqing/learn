@@ -1,25 +1,15 @@
-class HD {
-  static PENDING = "pending";
-  static FULFILLED = "fulfilled";
-  static REJECTED = "rejected";
-  constructor(executor) {
-    this.staus = HD.PENDING;
-    this.value = null;
-    executor(this.resolve, this.reject);
-  }
-  resolve(value) {
-    console.log(this);
-    this.staus = HD.FULFILLED;
-    this.value = value;
-  }
-  reject(reason) {
-    this.staus = HD.REJECTED;
-    this.reason = reason;
-  }
-}
+// promise与settimeout执行顺序的问题
+setTimeout(function () {
+  console.log(1);
+}, 0);
 
-let p = new HD((resolve, reject) => {
-  resolve(123);
+new Promise(function (a, b) {
+  console.log(2);
+  for (var i = 0; i < 10; i++) {
+    i == 9 && a();
+  }
+  console.log(3);
+}).then(function () {
+  console.log(4);
 });
-
-console.log(p);
+console.log(5);

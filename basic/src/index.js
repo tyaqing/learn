@@ -3,4 +3,5 @@
 // import "./call&apply"; ok
 // import "./bind";
 // import "./new";
-import "./promise";
+// import "./promise";
+import "./EventLoop";
