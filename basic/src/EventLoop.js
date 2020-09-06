@@ -1,23 +1,15 @@
-console.log(1);
-
 setTimeout(function () {
+  console.log(1);
+}, 0);
+new Promise(function (a, b) {
   console.log(2);
-
-  new Promise(function (resolve) {
-    console.log(3);
-    resolve(4);
-  }).then(function (num) {
-    console.log(num);
-  });
-}, 300);
-
-new Promise(function (resolve) {
-  console.log(5);
-  resolve(6);
-}).then(function (num) {
-  console.log(num);
+  for (var i = 0; i < 10; i++) {
+    i == 9 && a();
+  }
+  console.log(3);
+}).then(function () {
+  console.log(4);
 });
+console.log(5);
 
-setTimeout(function () {
-  console.log(7);
-}, 400);
+// 2 3 5 4 1
