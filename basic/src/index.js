@@ -4,4 +4,6 @@
 // import "./bind";
 // import "./new";
 // import "./promise";
-import "./EventLoop";
+// import "./EventLoop";
+
+import "./prototype";
