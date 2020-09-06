@@ -1,4 +1,4 @@
-# React 文档
+# React 核心概念
 
 ## JSX 简介
 
@@ -80,12 +80,39 @@ State 与 props 类似，但是 state 是私有的，并且完全受控于当前
 
 ### 生命周期
 
-```js
-// 组件第一次被渲染到 DOM 中的时候
-componentDidMount(){}
-//当 DOM中组件被删除的时候
-componentWillUnmount(){}
-```
+具体参考[React.Component](https://zh-hans.reactjs.org/docs/react-component.html#the-component-lifecycle)
+
+#### 挂载
+
+当组件实例被创建并插入 DOM 中时，其生命周期调用顺序如下：
+
+- constructor()
+- static getDerivedStateFromProps()
+- render()
+- componentDidMount()
+
+#### 更新
+
+当组件的 props 或 state 发生变化时会触发更新。组件更新的生命周期调用顺序如下：
+
+- static getDerivedStateFromProps()
+- shouldComponentUpdate()
+- render()
+- getSnapshotBeforeUpdate()
+- componentDidUpdate()
+
+#### 卸载
+
+当组件从 DOM 中移除时会调用如下方法：
+
+- componentWillUnmount()
+
+#### 错误处理
+
+当渲染过程，生命周期，或子组件的构造函数中抛出错误时，会调用如下方法：
+
+- static getDerivedStateFromError()
+- componentDidCatch()
 
 ## 数据是向下流动的
 
