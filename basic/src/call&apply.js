@@ -14,6 +14,10 @@ function fun2() {
 
 // fun.call(obj);
 
+/**
+call() 方法使用一个指定的 this 值和单独给出的一个或多个参数来调用一个函数。
+
+ */
 // 首先来实现第一个版本的call2函数
 
 Function.prototype.call2 = function (context) {

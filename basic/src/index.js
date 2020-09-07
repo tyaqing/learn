@@ -6,4 +6,6 @@
 // import "./promise";
 // import "./EventLoop";
 
-import "./prototype";
+// import "./prototype";
+// import "./prototypeExtend";
+import "./borrowExtend";
