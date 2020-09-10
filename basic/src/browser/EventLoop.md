@@ -40,6 +40,7 @@ setTimeOut 是在时间完成之后才加入到回调队列中去的
 ## 宏任务与微任务
 
 常见宏任务:script(整体代码),setTimeout,setInterval;
+
 常见微任务:new Promise,process.nextTick(node.js 环境)
 
 ### 执行顺序
