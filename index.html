@@ -7,6 +7,24 @@
     <style></style>
   </head>
   <body>
-    <script src="algorithm/2.add-two-numbers.js"></script>
+    <!-- <script src="./basic/src/ES6/decorator.js"></script> -->
+
+    <script>
+      // console.log(13);
+
+      function dec(id) {
+        console.log("evaluated", id);
+        return (target, property, descriptor) => {
+          console.log("executed", id);
+          // console.log("p", target);
+        };
+      }
+
+      class Example {
+        @dec(1)
+        @dec(2)
+        method() {}
+      }
+    </script>
   </body>
 </html>
