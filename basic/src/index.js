@@ -8,4 +8,5 @@
 
 // import "./prototype";
 // import "./prototypeExtend";
-import "./borrowExtend";
+// import "./borrowExtend";
+import "./ES6/decorator";
