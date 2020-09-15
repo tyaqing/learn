@@ -38,60 +38,46 @@ export default class HD {
   then(onFulfilled, onRejected) {
     // 这里的返回的promise的resolve是在下一个then中的resolve
     return new HD((resolve, reject) => {
-      console.log("status", this.status);
       if (typeof onRejected != "function") {
-        onRejected = () => {};
+        onRejected = () => this.value;
       }
       if (typeof onFulfilled != "function") {
-        onFulfilled = () => {};
+        onFulfilled = () => this.value;
       }
 
       if (this.status === HD.PENDING) {
         this.callbacks.push({
           onFulfilled: (value) => {
-            try {
-              let result = onFulfilled(value);
-              resolve(result);
-            } catch (error) {
-              reject(error);
-            }
+            this.parse(onFulfilled(value), resolve, reject);
           },
           onRejected: (reason) => {
-            try {
-              let result = onRejected(reason);
-              resolve(result);
-            } catch (error) {
-              reject(error);
-            }
+            this.parse(onRejected(reason), resolve, reject);
           },
         });
       }
       if (this.status === HD.FULFILLED) {
         setTimeout(() => {
-          try {
-            // 这里收到了return的值
-            let result = onFulfilled(this.value);
-            // console.log(result);
-            // this.status = HD.FULFILLED;
-            resolve(result);
-          } catch (error) {
-            reject(error);
-          }
+          this.parse(onFulfilled(this.value), resolve, reject);
         }, 0);
       }
       if (this.status === HD.REJECTED) {
         // onRejected(this.value);
         setTimeout(() => {
-          try {
-            let result = onRejected(this.value);
-            // 这里有个问题
-            resolve(result);
-          } catch (error) {
-            reject(error);
-          }
+          this.parse(onRejected(this.value), resolve, reject);
         }, 0);
       }
     });
+  }
+  parse(result, resolve, reject) {
+    try {
+      if (result instanceof HD) {
+        result.then(resolve, reject);
+      } else {
+        resolve(result);
+      }
+    } catch (error) {
+      reject(error);
+    }
   }
 }
 

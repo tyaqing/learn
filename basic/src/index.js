@@ -27,19 +27,26 @@ new HD((resolve, reject) => {
   // reject("失败了");
   resolve("成功了");
 })
+  .then((value) => {
+    return new HD((resolve, reject) => {
+      reject("promise里面的函数");
+    });
+  })
   .then(
     (value) => {
-      console.log(value);
-      return "这传给下一个";
+      console.log("123", value);
     },
     (reason) => {
-      console.log(reason);
-      return "这里又可以了";
+      console.log("reason", reason);
     }
-  )
-  .then((value) => {
-    console.log("这里爱没有执行");
-    console.log(value);
-  });
+  );
+// .then((value) => {
+//   console.log("这里爱没有执行");
+//   console.log(value);
+// });
 
 // console.log("hou");
+// var a = { name: "前端开发" };
+// var b = a;
+// a = null;
+// console.log(b);
