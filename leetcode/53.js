@@ -1,4 +1,5 @@
 /**
+ * 53.最大子序和
  * @param {number[]} nums
  * @return {number}
  */
@@ -10,3 +11,6 @@ var maxSubArray = function (nums) {
   }
   return Math.max(...memo);
 };
+
+const res = maxSubArray([2, -3, 4, -2, 5]);
+console.log(res);
