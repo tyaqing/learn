@@ -1,3 +1,6 @@
+"use stric";
+// import Worker from "./fb.worker";
+
 // var findDiagonalOrder = function (matrix) {
 //   let row = (col = 0);
 //   let top = (left = 0);
@@ -24,14 +27,3 @@
 //   [5, 6, 7, 8],
 //   [9, 10, 11, 12],
 // ]);
-
-function f(n) {
-  if (n < 2) return n;
-  return f(n - 1) + f(n - 2);
-}
-let now = Date.now();
-
-let worker = new Worker("./src/worker.js");
-
-// console.log(f(40));
-console.log(Date.now() - now);
