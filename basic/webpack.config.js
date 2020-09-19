@@ -41,6 +41,16 @@ module.exports = {
         use: ["file-loader"],
       },
       { test: /\.js$/, use: "babel-loader" },
+      {
+        test: /\.worker\.js$/, // 以 .worker.js 结尾的文件将被 worker-loader 加载
+        use: {
+          loader: "worker-loader",
+          options: {
+            inline: true,
+            // fallback: false
+          },
+        },
+      },
     ],
   },
 };
