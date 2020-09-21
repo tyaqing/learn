@@ -37,5 +37,10 @@ function* sendXML() {
 }
 
 let SX = sendXML();
-SX.next();
-symbol.iterator;
+// SX.next();
+// symbol.iterator;
+
+let res = "321".split("").reduce((a, b) => a + Number(b), 0);
+console.log(res);
+
+console.log(1 + "1" * 1);
