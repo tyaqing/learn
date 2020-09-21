@@ -1,22 +1,27 @@
-.center {
-  height: 150px;
-  background-color: #94e8ff;
-  flex-grow: 2;
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #efefef;
 }
 
+div {
+  height: 300px;
+}
 .left {
-  width: 100px;
-  height: 150px;
-  background-color: #ffb5bf;
-  order: -1;
-  /* flex-grow: 1; */
-}
-.right {
   width: 200px;
-  height: 150px;
-  background-color: #8990d5;
-  /* flex-grow: 1; */
+  background-color: pink;
+  float: left;
 }
-.container {
-  display: flex;
+
+.right {
+  background-color: deeppink;
+  overflow: hidden;
+}
+
+.item {
+  background-color: gold;
+  height: 120px;
+  margin: 10px;
 }

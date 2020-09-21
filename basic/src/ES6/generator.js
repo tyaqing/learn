@@ -37,5 +37,5 @@ function* sendXML() {
 }
 
 let SX = sendXML();
-SX.next();
-symbol.iterator;
+// SX.next();
+// symbol.iterator;

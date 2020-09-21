@@ -1,46 +1,38 @@
-import axios from "axios";
-
+import "./index.css";
 /**
- * generator
+ * copy
  */
 
-function* myGenerator() {
-  // console.log("start");
-  yield { key: 2 };
-  yield { name: "2" };
-}
+let arr = [1, 2, 3, 4, 5, 6, 7, 9];
 
-let mg = myGenerator();
-let mg2 = myGenerator();
-console.log(mg.next());
-// console.log(mg.next());
-// console.log(mg.next());
-for (const i of mg2) {
-  console.log(i);
-}
-let url =
-  "https://www.easy-mock.com/mock/5901e0117a878d73716dd641/example/students";
+let arr2 = arr.slice(0, arr.length);
+console.log(arr2);
 
-function getData() {
-  axios({
-    url,
-  }).then((res) => {
-    SX.next(res);
-  });
-}
+let user = {
+  name: "bob",
+};
 
-function* sendXML() {
-  let data = yield getData();
-  console.log(data);
-  let data2 = yield getData();
-  console.log("2", data2);
-}
+let user2 = {};
+Object.assign(user2, user);
+user2.name = "smith";
 
-let SX = sendXML();
-// SX.next();
-// symbol.iterator;
+console.log(user, user2);
 
-let res = "321".split("").reduce((a, b) => a + Number(b), 0);
-console.log(res);
+/**
+ * Object.assign()  // 浅拷贝
+ * Array.concat()   // 浅拷贝
+ * Array.slice()    // 浅拷贝
+ * JSON.parse(JSON.stringify())  // 深拷贝 但是里面不能有函数
+ */
 
-console.log(1 + "1" * 1);
+/**
+  * 深克隆
+    判断数据类型
+    1. typeof  String Number Object Boolean Array Undefined Function
+    2. Object.prototype.toString.call();
+  */
+
+let res = "123";
+let result = Object.prototype.toString.call(res).slice(8, -1);
+
+console.log(result);

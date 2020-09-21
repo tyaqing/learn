@@ -4,61 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= htmlWebpackPlugin.options.title %></title>
-    <style>
-      * {
-        padding: 0px;
-        margin: 0px;
-      }
-      .container {
-        display: flex;
-        flex-wrap: wrap;
-      }
-      .item {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        /* background-color: #1abc44; */
-        min-height: 100px;
-        /* padding: 4px; */
-        /* border: 1px solid #ccc; */
-        width: 33.3333%;
-        border-right: 1px solid #eee;
-        border-bottom: 1px solid #eee;
-        box-sizing: border-box;
-        transition: background-color 0.6s;
-      }
-      .item:hover {
-        background-color: #efefef;
-      }
-      .item img {
-        width: 50px;
-      }
-    </style>
+    <style></style>
   </head>
   <body>
-    <div class="container">
-      <div class="item">
-        <img
-          src="https://gw.alipayobjects.com/zos/rmsportal/XuVpGqBFxXplzvLjJBZB.svg"
-        />
-        <div>第一个</div>
-      </div>
-      <div class="item">
-        <img
-          src="https://gw.alipayobjects.com/zos/rmsportal/XuVpGqBFxXplzvLjJBZB.svg"
-        />
-        <div>第一个</div>
-      </div>
-      <div class="item">
-        <img
-          src="https://gw.alipayobjects.com/zos/rmsportal/XuVpGqBFxXplzvLjJBZB.svg"
-        />
-        <div>第一个</div>
-      </div>
+    <div class="left">left</div>
+    <div class="right">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
     </div>
-
-    <button id="btn">确定</button>
   </body>
   <script></script>
 </html>
