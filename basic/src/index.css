@@ -33,10 +33,10 @@ div {
   height: 200px;
   width: 200px;
   background-color: indigo;
-  position: relative;
-  left: 50px;
+  /* position: relative; */
+  /* left: 50px; */
   /* display: none; */
-  visibility: hidden;
+  /* visibility: hidden; */
 }
 .absolute {
   height: 200px;

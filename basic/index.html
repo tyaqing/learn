@@ -6,7 +6,7 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
     <style></style>
   </head>
-  <body>
+  <body id="body" onclick="bodyShow(event)">
     <div class="left">left</div>
     <div class="right">
       <div class="item"></div>
@@ -14,8 +14,8 @@
       <div class="item"></div>
     </div>
 
-    <div class="wrap">
-      <div class="position"></div>
+    <div id="div" onclick="divShow(event)" class="wrap">
+      <div id="button" onclick="buttonShow(this)" class="position"></div>
       <div class="absolute"></div>
     </div>
   </body>
