@@ -40,7 +40,7 @@ module.exports = {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: ["file-loader"],
       },
-      { test: /\.js$/, use: "babel-loader" },
+      // { test: /\.js$/, use: "babel-loader" },
       {
         test: /\.worker\.js$/, // 以.worker.js结尾的文件将被worker-loader加载
         use: { loader: "worker-loader" },

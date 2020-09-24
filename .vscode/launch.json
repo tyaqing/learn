@@ -5,8 +5,8 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch Edge For Debug",
-      "type": "edge",
+      "name": "Launch Chrome For Debug",
+      "type": "chrome",
       "request": "launch",
       "url": "http://localhost:8080",
       "sourceMaps": true,
