@@ -10,5 +10,3 @@ substring() 方法返回一个字符串在开始索引到结束索引之间的�
 let str = "sddlfa123lasdkfjiel";
 
 const res = str.substring(1, 5);
-
-console.log(res);
