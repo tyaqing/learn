@@ -1,18 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "./index.sass";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
-function log() {
-  console.log(...arguments);
-}
-
-log(4 >> 1);
-
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App name={"hei222hei"} />
   </React.StrictMode>,
   document.getElementById("root")
 );

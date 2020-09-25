@@ -1,12 +1,17 @@
 import React from "react";
 import logo from "./logo.svg";
-import "./App.css";
+import "./App.sass";
 
-function App() {
+function tick() {
+  return;
+}
+
+function App(props) {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <p>{props.name}</p>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
