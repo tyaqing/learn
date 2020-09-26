@@ -1,31 +1,46 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.sass";
-
-function tick() {
-  return;
-}
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Home from "./page/Home";
+import Mine from "./page/Mine";
+import { connect } from "react-redux";
+import { increment, decrement } from "./actions/counter";
 
 function App(props) {
+  console.log(props);
+  const { increment, decrement, counter } = props;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>{props.name}</p>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React More
-        </a>
-      </header>
+      <button
+        onClick={() => {
+          increment();
+        }}
+      >
+        +
+      </button>
+      {counter}
+      <button
+        onClick={() => {
+          decrement();
+        }}
+      >
+        -
+      </button>
     </div>
   );
 }
-
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    counter: state,
+  };
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    increment: () => {
+      dispatch(increment());
+    },
+    decrement: () => {
+      dispatch(decrement());
+    },
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(App);
