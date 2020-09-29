@@ -1,4 +1,4 @@
-import "./index.css";
+import "./index.less";
 
 let stt = "get-element-by-id";
 
@@ -17,25 +17,3 @@ let regexp = /\d/g;
 //     })
 //     .join("")
 // );
-
-var length = 10;
-
-function fn() {
-  return this.length + 1;
-}
-
-var obj = {
-  length: 5,
-
-  test1: function () {
-    return fn();
-  },
-};
-
-obj.test2 = fn;
-
-//下面代码输出是什么
-
-console.log(obj.test1());
-
-console.log(fn() === obj.test2());
