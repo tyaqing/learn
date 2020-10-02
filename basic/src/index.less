@@ -1,14 +1,30 @@
 @import "./base.css";
 
-#body {
+.header,
+.footer {
+  height: 70px;
+  background-color: greenyellow;
 }
-.container {
-  height: 600px;
-  width: 300px;
-  background-color: deepskyblue;
+.left {
+  background-color: purple;
+  height: 300px;
+  float: left;
+  width: 200px;
 }
-.item {
-  margin: 0 1%;
-  height: 100px;
-  background-color: orange;
+
+.right {
+  background-color: goldenrod;
+  height: 300px;
+  overflow: hidden;
+  text-align: center;
+  img {
+    vertical-align: middle;
+  }
+  &:after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 0;
+    vertical-align: middle;
+  }
 }

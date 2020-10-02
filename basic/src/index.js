@@ -1,19 +1,57 @@
 import "./index.less";
+import axios from "axios";
 
-let stt = "get-element-by-id";
+function JSONP({ url, params, callbackKey, callback }) {
+  // 在参数里制定 callback 的名字
+  params = params || {};
+  params[callbackKey] = "jsonpCallback";
+  // 预留 callback
+  window.jsonpCallback = callback;
+  // 拼接参数字符串
+  // 插入 DOM 元素
+  const script = document.createElement("script");
+  script.setAttribute("src", `${url}`);
+  document.body.appendChild(script);
+}
 
-// console.log(str);
-let str = "+7(903)-123-45-67";
+axios({
+  url: "https://www.easy-mock.com/mock/5901e0117a878d73716dd641/example/ttt?aa",
+  method: "post",
+  headers: {
+    "content-type": "application/json",
+    "X-PINGOTHER": "diy",
+    Cookie: "name=123",
+  },
+  withCredentials: true,
+});
 
-let regexp = /\d/g;
+// axios({
+//   url: "https://www.baidu.com",
+//   method: "get",
+// });
+alert(a);
+a();
+var a = 3;
+function a() {
+  alert(10);
+}
+alert(a);
+a = 6;
+a();
 
-// console.log(
-//   stt
-//     .match(/\w+\b/g)
-//     .map((item, index) => {
-//       if (index === 0) return item;
-//       item = item.slice(0, 1).toLocaleUpperCase() + item.slice(1);
-//       return item;
-//     })
-//     .join("")
-// );
+// function Foo() {
+//   this.getName = function () {
+//     console.log(1);
+//   };
+//   return this;
+// }
+
+// Foo.getName = function () {
+//   console.log(2);
+// };
+
+// Foo.prototype.getName = function () {
+//   console.log(3);
+// };
+
+// Foo();
