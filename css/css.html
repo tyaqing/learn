@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .warp :not(:last-of-type) {
+        border-right: 2px solid #3e8;
+        height: 40px;
+        width: 40px;
+        background-color: #eee;
+      }
+      .warp ::before {
+        content: "😋";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="warp">
+      <span>asdasd</span>
+      <span>asdasd</span>
+      <span>asdasd</span>
+      <span>asdasd</span>
+      <span>asdasd</span>
+      <div>asdasd</div>
+    </div>
+  </body>
+</html>
