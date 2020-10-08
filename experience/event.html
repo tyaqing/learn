@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="father">
+      <div class="child">
+        <button class="btn">click</button>
+      </div>
+    </div>
+  </body>
+  <script>
+    let father = document.getElementsByClassName("father")[0];
+    // let child = document.getElementsByClassName("child")[0];
+    let btn = document.getElementsByClassName("btn")[0];
+    let tick = Date.now();
+    father.addEventListener("touchstart", function (e) {
+      // console.log("father");
+      tick = Date.now();
+      console.log("touchstart");
+      console.dir(e);
+      // setTimeout(() => alert(1), 1000);
+    });
+    father.addEventListener("touchmove", function (e) {
+      // console.log("father");
+
+      console.log("touchmove");
+    });
+
+    father.addEventListener("click", function (e) {
+      // console.log("father");
+
+      console.log("click", Date.now() - tick);
+    });
+
+    father.addEventListener("touchcancel", function (e) {
+      // console.log("father");
+
+      console.log("touchcancel");
+    });
+
+    // child.addEventListener(
+    //   "click",
+    //   function () {
+    //     console.log("child");
+    //   },
+    //   true
+    // );
+    // btn.addEventListener("click", function (e) {
+    //   console.log("btn");
+    //   // e.stopPropagation();
+    // });
+
+    // function Per() {}
+    // Per.prototype = {
+    //   num1: 1000,
+    //   money: {
+    //     num2: 1000,
+    //   },
+    //   buy: function () {
+    //     console.log(this.num1, this.money.num2);
+    //   },
+    // };
+
+    // var p1 = new Per();
+    // var p2 = new Per();
+    // p2.num1 = 0;
+    // p2.money = { num2: 123 };
+
+    // p1.buy();
+    // console.log(p2, p1);
+  </script>
+</html>
