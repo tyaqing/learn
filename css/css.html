@@ -5,25 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      .warp :not(:last-of-type) {
-        border-right: 2px solid #3e8;
-        height: 40px;
-        width: 40px;
-        background-color: #eee;
+      .left {
+        width: 200px;
+        height: 200px;
+        background-color: greenyellow;
       }
-      .warp ::before {
-        content: "😋";
+      .right {
+        height: 200px;
+        width: 500px;
+        background-color: pink;
+        float: right;
+      }
+      .wrap {
+        overflow: hidden;
       }
     </style>
   </head>
   <body>
-    <div class="warp">
-      <span>asdasd</span>
-      <span>asdasd</span>
-      <span>asdasd</span>
-      <span>asdasd</span>
-      <span>asdasd</span>
-      <div>asdasd</div>
+    <div class="left"></div>
+    <div class="wrap">
+      <div class="right"></div>
     </div>
+    <div class="left"></div>
   </body>
 </html>
