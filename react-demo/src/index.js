@@ -4,35 +4,17 @@ import ReactDOM from "react-dom";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import reducer from "./reducer/counter";
-import Hooks from "./page/Hooks";
+import Hooks from "./App.js";
 //创建仓库
 const store = createStore(reducer);
 
 const render = () => {
   ReactDOM.render(
     <Provider store={store}>
-      {/* <Hooks /> */}
-      <div id="div">
-        <ul>
-          <li></li>
-        </ul>
-      </div>
+      <Hooks></Hooks>
     </Provider>,
     document.getElementById("root")
   );
 };
 render();
 store.subscribe(render);
-
-var value = 1;
-
-function foo() {
-  console.log(value);
-}
-
-function bar() {
-  var value = 2;
-  foo();
-}
-
-bar();

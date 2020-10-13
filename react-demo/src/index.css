@@ -1,0 +1,12 @@
+html,
+body {
+  height: 100%;
+}
+
+.list-item {
+  margin: 20px 12px;
+  border-bottom: 1px solid #eee;
+  padding: 10px 20px;
+  background-color: #eee;
+  /* box-shadow: 0 0 3px #ccc; */
+}
