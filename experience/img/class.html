@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="less"></style>
+  </head>
+
+  <body>
+    <script>
+      class Person {
+        constructor() {
+          this.name = 123;
+        }
+        func1() {}
+        func2() {}
+        // func2 = () => {};
+      }
+
+      function Animal() {
+        this.name = "monkey";
+        this.fun1 = () => {};
+        this.func2 = function () {};
+      }
+
+      let person = new Person();
+      let animal = new Animal();
+      console.log(person, animal);
+      for (const key in person) console.log(key);
+      console.log("----");
+      for (const key in animal) console.log(key);
+    </script>
+  </body>
+</html>
