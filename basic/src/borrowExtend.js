@@ -32,3 +32,8 @@ let s = new Student("bob", 12, 222);
 s.setName("Tome");
 s.setPrice(16000);
 console.log(s);
+
+let s = new Date();
+let s  = Math.random();
+
+let p = new Person('good',123);

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <!-- <link
+            href="https://vjs.zencdn.net/7.4.1/video-js.css"
+            rel="stylesheet"
+        />
+        <script src="https://vjs.zencdn.net/7.4.1/video.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.15.0/videojs-contrib-hls.min.js"
+            type="text/javascript"
+        ></script> -->
+    </head>
+    <body>
+        <script>
+            function ajax(url, cb) {
+                const xhr = new XMLHttpRequest()
+                xhr.open(
+                    "get",
+                    "https://app3mwpvcrh6987.h5.xiaoeknow.com/5d70aaa5-c5d2-41d6-8ab8-c20f454cd73f"
+                )
+                xhr.responseType = "blob" // "text"-字符串 "blob"-Blob对象 "arraybuffer"-ArrayBuffer对象
+                xhr.onload = function () {
+                    cb(xhr.response)
+                }
+                xhr.send()
+            }
+
+            ajax()
+        </script>
+    </body>
+</html>

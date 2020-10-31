@@ -22,3 +22,5 @@ function myNew(Constructor, ...argus) {
 let person1 = myNew(Person, "work1", 32);
 let person2 = new Person("person2", 23);
 console.log(person1, person2);
+
+// console.log(123) 
