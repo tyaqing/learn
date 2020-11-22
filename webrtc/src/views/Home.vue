@@ -22,7 +22,9 @@
     </select>
     <!-- <audio controls></audio> -->
     <button @click="shootcut">shootcut</button>
+    <br>
     <video class="video" ref="video" autoplay playsinline></video>
+    <br>
     <canvas class="canvas" width="640" height="480" ref="canvas"></canvas>
   </div>
 </template>
@@ -84,7 +86,7 @@ export default class Home extends Vue {
   shootcut() {
     (this.$refs.canvas as HTMLCanvasElement)
       .getContext("2d")
-      ?.drawImage((this.$refs.video) as HTMLVideoElement, 0, 0, 640, 480);
+      ?.drawImage(this.$refs.video as HTMLVideoElement, 0, 0, 640, 480);
   }
 }
 </script>
